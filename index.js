@@ -1,7 +1,8 @@
 const express=require('express');
-const env=require('dotenv').config();
+require('dotenv').config();
 const path=require('path');
-const { title } = require('process');
+
+
 
 
 const port=process.env.PORT || 3000;
@@ -19,8 +20,31 @@ app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req,res)=>{
 
-    res.render('index',{title:"Home work done",message:"Welcome to my Express app with Pug!"})
+      res.render('index',{title:"not so good",message:"This is Index Card "})
+});
+
+app.get('/about',(req,res)=>{
+
+     res.render('Pages/about');
 })
+app.get('/login',(req,res)=>{
+
+    res.render('Pages/login');
+})
+app.post('/submitform', (req, res) => {
+    
+    const { username, password } = req.body;
+    // Handle the submission logic (e.g., authentication)
+    res.send(`${username} Welcome Form submitted successfully with ${password}`);
+});
+
+
+
+// app.use((req, res, next) => {
+//     res.status(404).send('404 Not Found'); // You can customize this response
+// });
+
+
 
 
 app.listen(port,()=>{

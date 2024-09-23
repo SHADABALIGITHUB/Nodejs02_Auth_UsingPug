@@ -16,3 +16,18 @@ body{
     color: white;
 }
 
+.card{
+
+       width: 400px;
+       height:500px;
+       background-color: rosybrown;
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+        
+
+}
+

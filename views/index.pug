@@ -5,8 +5,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel="stylesheet", href="/stylesheets/mystyle.css")
+        script(src="https://cdn.tailwindcss.com")
     body 
-      
-        div class="card"
-        h1=message
-        p= title
+    
+    include Pages/navbar.pug
+    
+    div.card
+      h1.bg-red-900.p-4.rounded-xl=message
+      p= title
